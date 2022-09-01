@@ -6,5 +6,5 @@ export enum ButtonBackground {
 
 export enum ButtonOpacity {
     FULL = '1',
-    HALF = '0.8'
+    HALF = '0.65'
 }

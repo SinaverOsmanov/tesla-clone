@@ -1,9 +1,11 @@
 import * as React from 'react';
-import {Col, Drawer, Layout, Row} from "antd";
+import {useState} from 'react';
+import {Drawer, Layout} from "antd";
 import icon from "../assets/svg/svg-image";
-import {useState} from "react";
+import {FlexColumn, FlexRow} from '../styles/style';
 
 const {Header: HeaderTag} = Layout;
+
 
 // const anchors = [
 //     {
@@ -51,31 +53,35 @@ export const Header = () => {
 
     return (
         <HeaderTag style={{background: 'none'}}>
-            <Row justify='space-between'>
-                <Col span={2}>
-                    {icon.logo}
-                </Col>
-                <Col span={8}>
-                    <Row justify='space-around'>
-                        <Col><span>Model S</span></Col>
-                        <Col><span>Model 3</span></Col>
-                        <Col><span>Model X</span></Col>
-                        <Col><span>Model Y</span></Col>
-                        <Col><span>Solar Roof</span></Col>
-                        <Col><span>Solar Panels</span></Col>
-                    </Row>
-                </Col>
-                <Col span={3}>
-                    <Row justify='space-around'>
-                        <Col><span>Shop</span></Col>
-                        <Col><span> Account</span></Col>
-                        <Col><span onClick={showDrawer}>
+            <FlexRow justify='space-between' align='middle' style={{
+                fontWeight: 600
+            }}>
+                <FlexColumn span={2}>
+                    <FlexRow>
+                        {icon.logo}
+                    </FlexRow>
+                </FlexColumn>
+                <FlexColumn span={8}>
+                    <FlexRow justify='space-around'>
+                        <FlexColumn><span>Model S</span></FlexColumn>
+                        <FlexColumn><span>Model 3</span></FlexColumn>
+                        <FlexColumn><span>Model X</span></FlexColumn>
+                        <FlexColumn><span>Model Y</span></FlexColumn>
+                        <FlexColumn><span>Solar Roof</span></FlexColumn>
+                        <FlexColumn><span>Solar Panels</span></FlexColumn>
+                    </FlexRow>
+                </FlexColumn>
+                <FlexColumn span={3}>
+                    <FlexRow justify='space-around'>
+                        <FlexColumn><span>Shop</span></FlexColumn>
+                        <FlexColumn><span>Account</span></FlexColumn>
+                        <FlexColumn><span onClick={showDrawer}>
                             Menu
-                        </span></Col>
-                    </Row>
-                </Col>
+                        </span></FlexColumn>
+                    </FlexRow>
+                </FlexColumn>
 
-            </Row>
+            </FlexRow>
             <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
                 <p>Some contents...</p>
                 <p>Some contents...</p>

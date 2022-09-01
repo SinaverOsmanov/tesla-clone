@@ -12,6 +12,7 @@
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "antd": "^4.22.8",
+    "eslint": "8.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -29,7 +30,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "import/no-anonymous-default-export": "off"
+    }
   },
   "browserslist": {
     "production": [
