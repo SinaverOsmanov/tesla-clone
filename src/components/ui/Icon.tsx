@@ -8,7 +8,7 @@ interface IProps extends HTMLAttributes<JSX.Element> {
 
 const Icon = ({icon, style, ...rest}: IProps) => {
     return (
-        <i className={rest.className} style={{display: 'inline-block', ...style}}>{icon}</i>
+        <i className={rest.className}  style={{display: 'inline-block', ...style}}>{icon}</i>
     );
 };
 

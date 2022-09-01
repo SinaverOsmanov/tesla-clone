@@ -1,7 +1,7 @@
 import React, {PropsWithChildren} from 'react';
-import {Button} from "antd";
 import {ButtonProps} from "antd/lib/button/button";
 import {ButtonBackground, ButtonOpacity} from "../../core/enums/enum";
+import {ButtonStyle} from "../../styles/style";
 
 type ButtonPropsType = { color?: ButtonBackground, opacity?: ButtonOpacity } & PropsWithChildren & ButtonProps
 
@@ -13,8 +13,8 @@ const CustomButton = ({
                           ...rest
                       }: ButtonPropsType) => {
     return (
-        <Button {...rest} type="primary"
-                style={{background: color, opacity: opacity, ...rest.style}}>{children}</Button>
+        <ButtonStyle {...rest} type="primary"
+                style={{background: color, opacity: opacity, color: color === 'white' ? 'black' : 'white',...rest.style}}>{children}</ButtonStyle>
     );
 };
 
