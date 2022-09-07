@@ -2,43 +2,30 @@ import * as React from 'react';
 import {useState} from 'react';
 import {Drawer, Layout} from "antd";
 import icon from "../assets/svg/svg-image";
-import {FlexColumn, FlexRow} from '../styles/style';
+import {FlexColumn, FlexRow, FlexRowCenter} from '../styles/style';
+import Icon from "./ui/Icon";
+import styled from "styled-components";
 
-const {Header: HeaderTag} = Layout;
+const {Header: HeaderLayout} = Layout;
 
+const HeaderStyle = styled(HeaderLayout)`
+  background: none;
+  padding: 0
+`
 
-// const anchors = [
-//     {
-//         id: 1,
-//         title: 'Model S',
-//         path: '/'
-//     },
-//     {
-//         id: 2,
-//         title: 'Model 3',
-//         path: '/'
-//     },
-//     {
-//         id: 3,
-//         title: 'Model X',
-//         path: '/'
-//     },
-//     {
-//         id: 4,
-//         title: 'Model Y',
-//         path: '/'
-//     },
-//     {
-//         id: 5,
-//         title: 'Solar Roof',
-//         path: '/'
-//     },
-//     {
-//         id: 6,
-//         title: 'Solar Panels',
-//         path: '/'
-//     }
-// ]
+const HeaderWrapperStyle = styled(FlexRow)`
+  font-weight: 600;
+  
+  & div > div {
+    text-align: center;
+  } 
+ 
+  &:hover {
+    
+  }
+  
+`
+
 
 export const Header = () => {
     const [visible, setVisible] = useState(false);
@@ -52,17 +39,15 @@ export const Header = () => {
     };
 
     return (
-        <HeaderTag style={{background: 'none'}}>
-            <FlexRow justify='space-between' align='middle' style={{
-                fontWeight: 600
-            }}>
+        <HeaderStyle style={{background: 'none'}}>
+            <HeaderWrapperStyle justify='space-between' align='middle' >
                 <FlexColumn span={2}>
-                    <FlexRow>
-                        {icon.logo}
-                    </FlexRow>
+                    <FlexRowCenter justify='center'>
+                        <Icon icon={icon.logo} size={8}/>
+                    </FlexRowCenter>
                 </FlexColumn>
-                <FlexColumn span={8}>
-                    <FlexRow justify='space-around'>
+                <FlexColumn offset={6}>
+                    <FlexRow justify='space-around' align='middle'>
                         <FlexColumn><span>Model S</span></FlexColumn>
                         <FlexColumn><span>Model 3</span></FlexColumn>
                         <FlexColumn><span>Model X</span></FlexColumn>
@@ -71,8 +56,8 @@ export const Header = () => {
                         <FlexColumn><span>Solar Panels</span></FlexColumn>
                     </FlexRow>
                 </FlexColumn>
-                <FlexColumn span={3}>
-                    <FlexRow justify='space-around'>
+                <FlexColumn offset={6} span={3}>
+                    <FlexRow align='middle'>
                         <FlexColumn><span>Shop</span></FlexColumn>
                         <FlexColumn><span>Account</span></FlexColumn>
                         <FlexColumn><span onClick={showDrawer}>
@@ -81,12 +66,12 @@ export const Header = () => {
                     </FlexRow>
                 </FlexColumn>
 
-            </FlexRow>
+            </HeaderWrapperStyle>
             <Drawer title="Basic Drawer" placement="right" onClose={onClose} visible={visible}>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
             </Drawer>
-        </HeaderTag>
+        </HeaderStyle>
     );
 };
