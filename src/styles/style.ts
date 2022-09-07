@@ -16,7 +16,7 @@ export const RoundButtonStyle = styled(ButtonStyle)`
 
 `
 
-export const Section = styled.section<{ background?: string, image?: string }>`
+export const SectionStyle = styled.section<{ background?: string, image?: string }>`
   background-image: url(${props => props.image || ''});
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,9 +37,9 @@ export const A = styled.a`
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.8);
-    -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.8);
     transition: box-shadow 0.3s ease;
   }
 
@@ -48,20 +48,24 @@ export const A = styled.a`
   }
 
   &:hover::after {
-    -webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.8);
-    -moz-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.8);
   }
 `
 
 export const FlexColumn = styled(Col)`
-    display:flex;
-    flex-direction:column
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
 `
 
 export const FlexRow = styled(Row)`
-    display:flex;
-    flex-direction:row
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 `
 export const FlexRowCenter = styled(FlexRow)`
   justify-content: center;

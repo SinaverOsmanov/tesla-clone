@@ -1,13 +1,18 @@
+@import './reset.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 
 html,
 body {
-    margin: 0;
     font-family: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
 }
 
 html, body {
@@ -17,32 +22,4 @@ html, body {
 code {
     font-family: 'Montserrat', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-@keyframes arrow-down {
-
-    0% {
-        top: 0;
-    }
-    25% {
-        top: 10px;
-    }
-    50% {
-        top: 0;
-    }
-    75% {
-        top: 10px;
-    }
-    100% {
-        top: 0;
-    }
-}
-
-.icon {
-    cursor: pointer;
-    position: relative;
-    animation-name: arrow-down;
-    animation-duration: 2s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
 }
